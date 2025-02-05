@@ -24,3 +24,16 @@ export const login = async (userData) => {
 export default {
   register, login,
 };
+
+export const verifyOtp = async (otp, token) => {
+  try {
+    const response = await axios.post(
+      `${API_URL}/auth/verify-otp`,
+      { otp },
+      { headers: { Authorization: `Bearer ${token}` } }
+    );
+    return response.data;
+  } catch (error) {
+    throw error.response ? error.response.data : { message: "An error occurred" };
+  }
+};
