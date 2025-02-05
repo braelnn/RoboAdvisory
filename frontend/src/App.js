@@ -19,13 +19,13 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Home/>}/>
+        <Route path='/home' element={<Home/>}/>
         <Route path='/contacts' element={<Contacts/>}/>
         <Route path='/dashboard' element={<Dashboard/>}/>
         <Route path='/portfolio' element={<Portfolio/>}/>
         <Route path='/marketdata' element={<Marketdata/>}/>
         <Route path='/login' element={<Login/>}/>
-        <Route path='/Register' element={<Register/>}/>
+        <Route path='/' element={<Register/>}/>
         <Route path='/Faq' element={<Faq/>}/>
         <Route path='/portfolio-overview' element={<PortfolioOverview/>}/>
         <Route path='/portfolio-list' element={<PortfolioList/>}/>

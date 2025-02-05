@@ -40,7 +40,7 @@ const Register = () => {
   return (
     <div className="register-container">
       <div className="register-box">
-        <h2>Create an Account</h2>
+        <h2>Create An Account</h2>
         <form onSubmit={handleSubmit}>
           <div className="input-group">
             <label htmlFor="fullname">Full Name</label>

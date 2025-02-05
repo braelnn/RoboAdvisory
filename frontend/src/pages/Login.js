@@ -28,7 +28,7 @@ const Login = () => {
       localStorage.setItem("token", response.token);
 
       // Optionally redirect user
-      window.location.href = "/portfolio";
+      window.location.href = "/home";
     } catch (error) {
       setMessage(error.message || "An error occurred");
     }
@@ -78,6 +78,9 @@ const Login = () => {
             <button type="submit" className="login-button">
               Login
             </button>
+            <a href="/" className="login-link">
+            Register Here
+            </a>
           </form>
           {message && <p className="message">{message}</p>}
         </div>
