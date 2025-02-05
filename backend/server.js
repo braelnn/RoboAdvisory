@@ -12,7 +12,6 @@ const analyticsRoutes = require('./routes/analyticsRoutes');
 const marketDataRoutes = require('./routes/marketDataRoutes');
 
 
-
 dotenv.config();
 connectDB();
 console.log("Mongo URI:", process.env.MONGO_URI);
