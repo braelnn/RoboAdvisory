@@ -1,0 +1,150 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .profile-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #0077B5;
+    margin-bottom: 20px;
+  }
+  
+  .profile-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 16px;
+  }
+  
+  .profile-info label {
+    font-weight: bold;
+    color: #000;
+  }
+  
+  .profile-info p {
+    margin: 0;
+    color: #555;
+    font-weight: bold;
+  }
+  
+  .profile-info select, 
+  .profile-info input {
+  width: 60%; /* Reduced width for better alignment */
+  padding: 8px; /* Adjusted padding for a balanced look */
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+}
+
+  
+  .profile-actions {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .edit-btn, .save-btn, .cancel-btn, .change-password-btn {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .edit-btn {
+    background-color: #0077B5;
+    color: white;
+  }
+  
+  .save-btn {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .cancel-btn {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .change-password-btn {
+    background-color: #0077B5;
+    color: white;
+  }
+  
+  .edit-btn:hover, 
+  .save-btn:hover, 
+  .cancel-btn:hover, 
+  .change-password-btn:hover {
+    opacity: 0.8;
+  }
+  
+  /* Password Change Styling */
+  .password-change-container {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .password-change-container input {
+    display: block;
+    width: 100%;
+    margin: 5px 0;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .error-message {
+    color: red;
+    font-weight: bold;
+  }
+  
+  .success-message {
+    color: green;
+    font-weight: bold;
+  }
+  
+  @media (max-width: 768px) {
+    .profile-container {
+      max-width: 90%;
+    }
+  
+    .profile-info {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .profile-info select, 
+    .profile-info input {
+      width: 100%;
+    }
+  }
+  

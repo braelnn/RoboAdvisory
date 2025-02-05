@@ -14,6 +14,7 @@ import PortfolioDetails from './components/PortfolioDetails'
 import PortfolioForm from './components/PortfolioForm'
 import Analytics from './pages/Analytics'
 import EditProfile from './components/EditProfile'
+import ProfilePage from './pages/ProfilePage'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 function App() {
   return (
@@ -33,7 +34,7 @@ function App() {
         <Route path='/portfolio-details' element={<PortfolioDetails/>}/>
         <Route path='/chart' element={<Chart/>}/>
         <Route path='/analytics' element={<Analytics/>}/>
-        <Route path='/edit-profile' element={<EditProfile/>}/>
+        <Route path='/edit-profile' element={<ProfilePage/>}/>
 
 
 

@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
+    background-color: #ffffff;
   }
   
   .faq-container {
@@ -12,6 +12,13 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 20px;
+  }
+
+  .faq-container h1 {
+    color: #0077B5;
+    font-weight: 800;
+    font-family: Roboto;
+    font-size: 50px;
   }
   
   .faq-title {

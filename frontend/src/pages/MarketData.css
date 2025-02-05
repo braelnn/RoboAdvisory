@@ -39,6 +39,25 @@
     padding: 20px;
     flex: 1;
   }
+
+  .main-content h1 { 
+    color:#0077B5;
+    font-weight: 900px;
+    font-size: 60px;
+    font-family: Roboto;
+  }
+
+  .main-content p { 
+    color:#000000;
+    font-family: Arial;
+  }
+
+  .main-content h2 { 
+    color:#0077B5;
+    font-weight: 700px;
+    font-size: 45px;
+    font-family: Roboto;
+  }
   
   header {
     text-align: center;
@@ -54,14 +73,14 @@
   .card {
     width: 300px;
     padding: 20px;
-    background: #ecf0f1;
+    background: #ffffff;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
   }
   
   .card img {
-    max-width: 45px;
+    max-width: 40px;
     margin-bottom: 10px;
   }
   

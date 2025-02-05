@@ -10,6 +10,8 @@ const contactRoutes = require('./routes/contactRoutes')
 const portfolioRoutes = require('./routes/portfolioRoutes');
 const analyticsRoutes = require('./routes/analyticsRoutes');
 const marketDataRoutes = require('./routes/marketDataRoutes');
+const profileRoutes = require("./routes/profileRoutes"); 
+
 
 
 dotenv.config();
@@ -29,6 +31,8 @@ app.use("/conts", contactRoutes);
 app.use("/portf", portfolioRoutes);
 app.use('/analytics', analyticsRoutes);
 app.use('/market-data', marketDataRoutes);
+app.use("/profile", profileRoutes);  
+
 
 
 

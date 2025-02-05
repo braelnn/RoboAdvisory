@@ -105,7 +105,7 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link to="/profile" className={location.pathname === '/profile' ? 'active' : ''}>
+              <Link to="/edit-profile" className={location.pathname === '/edit-profile' ? 'active' : ''}>
                 Profile
               </Link>
             </li> 
