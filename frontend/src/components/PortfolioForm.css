@@ -1,0 +1,43 @@
+/* Portfolio Form */
+.portfolio-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+  }
+  
+  .portfolio-form h2 {
+    margin-bottom: 20px;
+  }
+  
+  .portfolio-form input,
+  .portfolio-form select,
+  .portfolio-form textarea,
+  .portfolio-form button {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .portfolio-form textarea {
+    resize: none;
+    height: 100px;
+  }
+  
+  .portfolio-form button {
+    background-color: #0077B5;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .portfolio-form button:hover {
+    background-color: #0077B5;
+  }
+  

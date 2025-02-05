@@ -1,0 +1,102 @@
+/* General Styles */
+.contacts {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .hero-section {
+    text-align: center;
+    padding: 50px 20px;
+    background: #0077b6;
+    color: white;
+  }
+  
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-section p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+  
+  /* Contact Container */
+  .contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .contact-form, .contact-details {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact-form h2, .contact-details h2 {
+    margin-bottom: 20px;
+  }
+  
+  /* Form Styles */
+  .contact-form form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea,
+  .contact-form button {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .contact-form textarea {
+    resize: none;
+    height: 100px;
+  }
+  
+  .contact-form button {
+    background: #0077b6;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .contact-form button:hover {
+    background: #005f86;
+  }
+  
+  .success-message {
+    color: green;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  /* Contact Details */
+  .contact-details p {
+    margin: 10px 0;
+  }
+  
+  /* Map Container */
+  .map-container {
+    margin: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  @media (max-width: 768px) {
+    .contact-container {
+      flex-direction: column;
+    }
+  }
+  

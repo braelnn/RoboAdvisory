@@ -1,0 +1,47 @@
+.settings-page {
+    font-family: Arial, sans-serif;
+    color: white;
+    background-color: #0077B5;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  .settings-page h2 {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+  }
+  
+  .settings-page section {
+    margin-bottom: 20px;
+    background: white;
+    padding: 15px;
+    border-radius: 5px;
+    color: black;
+  }
+  
+  .settings-page label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .settings-page select, 
+  .settings-page button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .settings-page button {
+    background: #005A8C;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .settings-page button:hover {
+    background: #004471;
+  }
+  

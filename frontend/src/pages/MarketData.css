@@ -1,0 +1,75 @@
+.market-data {
+    display: flex;
+  }
+  
+  .sidebar {
+    background: #2c3e50;
+    color: white;
+    width: 250px;
+    padding: 20px;
+    transition: all 0.3s ease;
+  }
+  
+  .sidebar.closed {
+    width: 60px;
+    overflow: hidden;
+  }
+  
+  .sidebar .toggle-btn {
+    background: #1abc9c;
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    padding: 10px 0;
+    cursor: pointer;
+  }
+  
+  .main-content {
+    padding: 20px;
+    flex: 1;
+  }
+  
+  header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .card {
+    width: 300px;
+    padding: 20px;
+    background: #ecf0f1;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .card img {
+    max-width: 45px;
+    margin-bottom: 10px;
+  }
+  
+  .positive {
+    color: green;
+  }
+  
+  .negative {
+    color: red;
+  }
+  
