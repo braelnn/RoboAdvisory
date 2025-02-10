@@ -97,7 +97,7 @@ const Portfolio = () => {
             <ul>
             <li><a href="/portfolio">Dashboard</a></li>
             <li><a href="/analytics">Analytics</a></li>
-            <li><a href="/port-setting">Settings</a></li>
+            <li><a href="/edit-profile">Settings</a></li>
             <li><a href="/contacts">Contact Us</a></li>
             </ul>
           </nav>

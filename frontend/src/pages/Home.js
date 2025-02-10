@@ -4,43 +4,9 @@ import Header from '../components/Header';
 import './Home.css'
 
 function Home() {
-  const [counts, setCounts] = useState({
-    users: 0,
-    portfolios: 0,
-    market: 0,
-    admins: 0
-  });
+  
 
-  const finalCounts = {
-    users: 1232,
-    portfolios: 64,
-    market: 42,
-    admins: 24
-  };
-
-  useEffect(() => {
-    const duration = 1000; // 1 second duration
-    const steps = 20; // Number of steps in the animation
-    const interval = duration / steps;
-
-    const counters = Object.entries(finalCounts).map(([key, value]) => {
-      const stepValue = value / steps;
-      let currentStep = 0;
-
-      return setInterval(() => {
-        if (currentStep < steps) {
-          setCounts(prev => ({
-            ...prev,
-            [key]: Math.round(stepValue * (currentStep + 1))
-          }));
-          currentStep++;
-        }
-      }, interval);
-    });
-
-    // Cleanup intervals
-    return () => counters.forEach(counter => clearInterval(counter));
-  }, []);
+  
   return (
     <div className="home">
        <Header />
@@ -55,7 +21,7 @@ function Home() {
           RoboAdvisor offers automated, data-driven investment solutions tailored to your goals
           </p>
           <div className="hero-cta">
-            <Link to="/dashboard" className="btn-get-started">
+            <Link to="/login" className="btn-get-started">
               Get Started
             </Link>
           </div>
@@ -87,75 +53,90 @@ function Home() {
                 <span>Personalized Reports: Get detailed performance insights and recommendations tailored to your investments.</span>
               </li>
             </ul>
-            <Link to="/features" className="read-more">
+            <Link to="/marketdata" className="read-more">
               <span>Discover More</span>
               <span className="arrow-icon">→</span>
             </Link>
           </div>
         </div>
       </div>
-    </section>
-    <section className="counts section light-background">
-      <div className="container">
-        <div className="stats-row">
-          <div className="stats-item">
-            <div className="stats-content">
-              <span className="purecounter">{counts.users}</span>
-              <p>Active Users</p>
-            </div>
-          </div>
-
-          <div className="stats-item">
-            <div className="stats-content">
-              <span className="purecounter">{counts.portfolios}</span>
-              <p>Portfolios Created</p>
-            </div>
-          </div>
-
-          <div className="stats-item">
-            <div className="stats-content">
-              <span className="purecounter">{counts.market}</span>
-              <p>Market Insights Delivered</p>
-            </div>
-          </div>
-
-          <div className="stats-item">
-            <div className="stats-content">
-              <span className="purecounter">{counts.admins}</span>
-              <p>Admins Supporting the Platform
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    </section>    
     <section id="why-us" className="why-us section">
-      <div className="container">
-        <div className="row">
-          {/* Left Box */}
-          <div className="why-box-container">
-            <div className="why-box">
-              <h3>Why Choose RoboAdvisor for Your Portfolio?</h3>
-              <p>
-              Our portfolio management tools are designed to provide you with automated, efficient, 
+        <div className="container">
+          <div className="red-card">
+            <h3>Why Choose RoboAdvisor for Your Portfolio?</h3>
+            <p>
+              Our portfolio management tools provide you with automated, efficient, 
               and personalized investment strategies. Whether you're starting your financial journey 
               or managing an established portfolio, RoboAdvisor simplifies the process and maximizes your returns.
-              </p>
-              <div className="text-center">
-                <Link to="/portfolios" className="more-btn">
-                  <span>Learn More</span>
-                  <span className="chevron-right">›</span>
-                </Link>
-              </div>
+            </p>
+            <Link to="/portfolio" className="cta-btn">Learn More</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ✅ Success Stories Section - Red Cards */}
+      <section id="success-stories" className="success-stories section">
+        <div className="container">
+          <h3 className="section-title">Success Stories: Real People, Real Growth</h3>
+          <p className="section-subtext">
+            Join thousands of users who have transformed their financial future with RoboAdvisor.
+          </p>
+          <div className="card-grid">
+            <div className="red-card">
+              <p>“I used to struggle with investment decisions, but RoboAdvisor made everything so simple!  
+              My portfolio has grown by 30% in just one year!”</p>
+              <span>- Sarah L., Tech Entrepreneur</span>
+            </div>
+            <div className="red-card">
+              <p>“The AI-powered insights helped me make smarter financial choices. I now have a  
+              diversified portfolio and peace of mind.”</p>
+              <span>- Ogolla K.,  Financial Analyst</span>
+            </div>
+            <div className="red-card">
+              <p>“RoboAdvisor takes the guesswork out of investing. My savings are now working for me,  
+              and I couldn’t be happier!”</p>
+              <span>- James C., Small Business Owner</span>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* ✅ How It Works Section - Red Cards
+      <section id="how-it-works" className="how-it-works section">
+        <div className="container">
+          <h3 className="section-title">How It Works</h3>
+          <p className="section-subtext">Getting started is easy. Follow these simple steps:</p>
+          <div className="card-grid">
+            <div className="red-card">
+              <h4>Step 1: Sign Up</h4>
+              <p>Create an account in minutes and set up your financial goals.</p>
+            </div>
+            <div className="red-card">
+              <h4>Step 2: Personalized Plan</h4>
+              <p>Answer a few questions, and let our AI tailor an investment strategy for you.</p>
+            </div>
+            <div className="red-card">
+              <h4>Step 3: Start Investing</h4>
+              <p>Deposit funds, and RoboAdvisor will handle the rest—monitoring, rebalancing, and optimizing.</p>
+            </div>
+          </div>
+        </div>
+      </section> */}
+
+      {/* ✅ Join Us Section - Red CTA Card */}
+      <section id="join-us" className="join-us section">
+        <div className="container">
+          <div className="red-card cta-card">
+            <h3>Start Your Journey Today</h3>
+            <p>Join thousands of smart investors who trust RoboAdvisor to grow their wealth.</p>
+            <Link to="/" className="cta-btn">Join Now</Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
-  
-  
 }
+
 
 export default Home;

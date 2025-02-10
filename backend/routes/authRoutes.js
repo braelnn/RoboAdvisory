@@ -74,8 +74,8 @@ router.post("/login", async (req, res) => {
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: user.email,
-      subject: "Your Login OTP",
-      text: `Your OTP is: ${otp}`,
+      subject: "Login OTP Code ",
+      text: `Hello Our RoboAdvisory User, Your OTP Code is: ${otp}`,
     });
 
     // Generate JWT

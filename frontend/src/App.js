@@ -15,6 +15,8 @@ import PortfolioForm from './components/PortfolioForm'
 import Analytics from './pages/Analytics'
 import EditProfile from './components/EditProfile'
 import ProfilePage from './pages/ProfilePage'
+import Reports from './pages/Reports'
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 function App() {
   return (
@@ -35,6 +37,8 @@ function App() {
         <Route path='/chart' element={<Chart/>}/>
         <Route path='/analytics' element={<Analytics/>}/>
         <Route path='/edit-profile' element={<ProfilePage/>}/>
+        <Route path='/reports' element={<Reports/>}/>
+
 
 
 

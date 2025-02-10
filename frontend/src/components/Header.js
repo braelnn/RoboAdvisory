@@ -85,15 +85,15 @@ const Header = () => {
         <nav id="navmenu" className={`navmenu ${isMobileMenuOpen ? 'mobile-nav-active' : ''}`}>
           <ul>
             <li>
-              <Link to="/" className={location.pathname === '/' ? 'active' : ''}>
+              <Link to="/home" className={location.pathname === '/' ? 'active' : ''}>
                 Home
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/dashboard" className={location.pathname === '/dashboard' ? 'active' : ''}>
                 Dashboard
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link to="/portfolio" className={location.pathname === '/portfolios' ? 'active' : ''}>
                 Portfolio
