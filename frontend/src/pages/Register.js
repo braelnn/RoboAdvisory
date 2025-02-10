@@ -38,7 +38,34 @@ const Register = () => {
   };
 
   return (
+      
     <div className="register-container">
+      <div className="info-box">
+        <h2>Secure Your Financial Future with Smart Investing</h2>
+        <p>
+          Investing doesn’t have to be complicated. With <strong>RoboAdvisor</strong>, you get a powerful,
+          AI-driven investment platform designed to help you grow and manage your wealth effortlessly.
+          Whether you're a beginner or an experienced investor, our platform provides customized
+          strategies tailored to your financial goals and risk tolerance.
+        </p>
+        
+        <h3>Why Join RoboAdvisor?</h3>
+        <ul>
+          <li><strong>Smart Portfolio Management:</strong> Let our intelligent system optimize your investments for maximum returns.</li>
+          <li><strong>Real-Time Market Insights:</strong> Stay ahead with live updates and data-driven investment opportunities.</li>
+          <li><strong>Automated Risk Analysis:</strong> Reduce uncertainty with risk assessments that keep your portfolio balanced.</li>
+          <li><strong>Easy-to-Use, Secure Platform:</strong> Your investments are protected with top-tier encryption and secure access.</li>
+          <li><strong>Personalized Investment Strategies:</strong> Customize your portfolio based on your financial goals and preferences.</li>
+          <li><strong>24/7 Accessibility:</strong> Manage your investments anytime, anywhere, from any device.</li>
+        </ul>
+
+        <p className="cta-text">
+          Don’t miss out on smarter investing. <br/>
+          <strong>Sign up today and take control of your financial future!</strong>
+        </p>
+      </div>
+
+
       <div className="register-box">
         <h2>Create An Account</h2>
         <form onSubmit={handleSubmit}>
