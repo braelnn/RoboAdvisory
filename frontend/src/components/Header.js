@@ -79,7 +79,7 @@ const Header = () => {
     >
       <div className="container-fluid container-xl position-relative d-flex align-items-center">
         <Link to="/" className="logo d-flex align-items-center me-auto">
-          <h1 className="sitename">INVEST</h1>
+        <h1 className="sitename" style={{ color: "white" }}>INVEST</h1>
         </Link>
 
         <nav id="navmenu" className={`navmenu ${isMobileMenuOpen ? 'mobile-nav-active' : ''}`}>

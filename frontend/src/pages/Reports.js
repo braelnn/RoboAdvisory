@@ -52,7 +52,7 @@ const Reports = () => {
         <h2 className="reports-title">Investment Reports & Insights</h2>
 
         {/* ✅ Print Button (Only Visible on Screen) */}
-        <button className="print-btn" onClick={handlePrint}>Print as PDF</button>
+        {/* <button className="print-btn" onClick={handlePrint}>Print as PDF</button> */}
 
         {/* ✅ Wrap everything inside reportRef for printing */}
         <div ref={reportRef} className="report-content">

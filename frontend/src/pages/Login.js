@@ -23,7 +23,7 @@ const Login = () => {
 
     try {
       const response = await login(formData); // Send login request
-      setMessage("OTP sent to your email.");
+      setMessage("");
       setOtpSent(true); // Show OTP input field
       setToken(response.token); // Temporarily store the token
 

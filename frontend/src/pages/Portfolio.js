@@ -3,6 +3,7 @@ import './Portfolio.css';
 import PortfolioOverview from '../components/PortfolioOverview';
 import PortfolioList from '../components/PortfolioList';
 import PortfolioForm from '../components/PortfolioForm';
+import Header from '../components/Header';
 import PortfolioDetails from '../components/PortfolioDetails';
 import {
   getPortfolios,
@@ -84,56 +85,59 @@ const Portfolio = () => {
   
 
   return (
-    <div className="portfolio-page">
-      <aside className={`sidebar ${sidebarOpen ? 'open' : 'closed'}`}>
-        <button
-          className="toggle-sidebar"
-          onClick={() => setSidebarOpen(!sidebarOpen)}
-        >
-          {sidebarOpen ? '←' : '→'}
-        </button>
-        {sidebarOpen && (
-          <nav>
-            <ul>
-            <li><a href="/portfolio">Dashboard</a></li>
-            <li><a href="/analytics">Analytics</a></li>
-            <li><a href="/edit-profile">Settings</a></li>
-            <li><a href="/contacts">Contact Us</a></li>
-            </ul>
-          </nav>
-        )}
-      </aside>
-      <main className="portfolio-main-content">
-        <header className="portfolio-header">
-          <h1>Portfolio Management</h1>
-          <button onClick={() => setShowForm(!showForm)}>
-            {showForm ? 'Cancel' : 'Create New Portfolio'}
+    <div className='port'>
+      <Header />
+      <div className="portfolio-page">
+        <aside className={`sidebar ${sidebarOpen ? 'open' : 'closed'}`}>
+          <button
+            className="toggle-sidebar"
+            onClick={() => setSidebarOpen(!sidebarOpen)}
+          >
+            {sidebarOpen ? '←' : '→'}
           </button>
-        </header>
-        <div className="portfolio-container">
-          <PortfolioOverview portfolios={portfolios} />
-          {showForm && (
-            <PortfolioForm
-              addPortfolio={addPortfolio}
-              closeForm={() => setShowForm(false)}
-            />
+          {sidebarOpen && (
+            <nav>
+              <ul>
+              <li><a href="/portfolio">Dashboard</a></li>
+              <li><a href="/analytics">Analytics</a></li>
+              <li><a href="/edit-profile">Settings</a></li>
+              <li><a href="/contacts">Contact Us</a></li>
+              </ul>
+            </nav>
           )}
-          {selectedPortfolio ? (
-            <PortfolioDetails
-              portfolio={selectedPortfolio}
-              closeDetails={() => setSelectedPortfolio(null)}
-            />
-          ) : (
-            <PortfolioList
-              portfolios={portfolios}
-              viewPortfolio={setSelectedPortfolio}
-              deletePortfolio={deletePortfolioById}
-              editPortfolio={editPortfolio} // Pass the editPortfolio function
+        </aside>
+        <main className="portfolio-main-content">
+          <header className="portfolio-header">
+            <h1>Portfolio Management</h1>
+            <button onClick={() => setShowForm(!showForm)}>
+              {showForm ? 'Cancel' : 'Create New Portfolio'}
+            </button>
+          </header>
+          <div className="portfolio-container">
+            <PortfolioOverview portfolios={portfolios} />
+            {showForm && (
+              <PortfolioForm
+                addPortfolio={addPortfolio}
+                closeForm={() => setShowForm(false)}
+              />
+            )}
+            {selectedPortfolio ? (
+              <PortfolioDetails
+                portfolio={selectedPortfolio}
+                closeDetails={() => setSelectedPortfolio(null)}
+              />
+            ) : (
+              <PortfolioList
+                portfolios={portfolios}
+                viewPortfolio={setSelectedPortfolio}
+                deletePortfolio={deletePortfolioById}
+                editPortfolio={editPortfolio} // Pass the editPortfolio function
 
-            />
-          )}
-        </div>
-      </main>
+              />
+            )}
+          </div>
+        </main>
+      </div>
     </div>
   );
 };

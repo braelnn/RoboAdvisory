@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './MarketData.css';
+import Header from '../components/Header';
 import { getRealTimeData, getHistoricalData, getMarketNews } from '../Services/marketDataService';
 
 const MarketData = () => {
@@ -30,6 +31,7 @@ const MarketData = () => {
 
   return (
     <div className="market-data">
+      <Header />
      
       
 
