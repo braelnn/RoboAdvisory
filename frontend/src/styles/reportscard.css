@@ -1,0 +1,50 @@
+/* Report Card Styles */
+.report-card {
+    background-color: white;
+    border: 1px solid #E1E9EE; /* Light Gray */
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+.report-title {
+    font-family: 'Roboto', Arial, sans-serif;
+    color: #0077B5; /* LinkedIn Blue */
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.report-date, .report-value, .report-risk {
+    font-size: 0.9rem;
+    color: #434649; /* Slate Gray */
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.report-summary {
+    font-size: 1rem;
+    color: #434649;
+}
+
+/* View Button */
+.view-btn {
+    background-color: #0077B5; /* LinkedIn Blue */
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.view-btn:hover {
+    background-color: #005587; /* Darker LinkedIn Blue */
+}

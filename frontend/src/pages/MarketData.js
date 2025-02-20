@@ -2,17 +2,13 @@ import React, { useState, useEffect } from 'react';
 import './MarketData.css';
 import Header from '../components/Header';
 import { getRealTimeData, getHistoricalData, getMarketNews } from '../Services/marketDataService';
+import { FaChartLine, FaArrowUp, FaArrowDown, FaNewspaper } from 'react-icons/fa'; // Import Icons
 
 const MarketData = () => {
   const [realTimeData, setRealTimeData] = useState([]);
-  const [historicalData, setHistoricalData] = useState([]);
   const [news, setNews] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedRange, setSelectedRange] = useState('7d');
-  const [isSidebarOpen, setSidebarOpen] = useState(true);
 
   useEffect(() => {
-    // Fetch real-time market data and news
     async function fetchInitialData() {
       const realTime = await getRealTimeData();
       const newsData = await getMarketNews();
@@ -22,18 +18,9 @@ const MarketData = () => {
     fetchInitialData();
   }, []);
 
-  const handleSearch = async () => {
-    if (searchTerm) {
-      const data = await getHistoricalData(searchTerm, selectedRange);
-      setHistoricalData(data);
-    }
-  };
-
   return (
     <div className="market-data">
       <Header />
-     
-      
 
       {/* Main Content */}
       <div className="main-content">
@@ -48,10 +35,11 @@ const MarketData = () => {
           <div className="card-container">
             {realTimeData.map((asset) => (
               <div key={asset.symbol} className="card">
-                <img src={asset.image} alt={asset.symbol} />
+                <FaChartLine className="icon" />
                 <h3>{asset.name} ({asset.symbol})</h3>
-                <p>Price: ${asset.price}</p>
+                <p><FaChartLine className="icon" /> Price: ${asset.price}</p>
                 <p>
+                  {asset.change > 0 ? <FaArrowUp className="icon positive" /> : <FaArrowDown className="icon negative" />}
                   Change: <span className={asset.change > 0 ? 'positive' : 'negative'}>
                     {asset.change} ({asset.percentChange}%)
                   </span>
@@ -62,39 +50,6 @@ const MarketData = () => {
             ))}
           </div>
         </section>
-
-        {/* Search and Filters */}
-        {/* <section>
-          <h2>Search and Filter</h2>
-          <input
-            type="text"
-            placeholder="Enter ticker symbol"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-          <select onChange={(e) => setSelectedRange(e.target.value)}>
-            <option value="7d">Past 7 Days</option>
-            <option value="1m">Past 1 Month</option>
-            <option value="1y">Past 1 Year</option>
-          </select>
-          <button onClick={handleSearch}>Search</button>
-        </section> */}
-
-        {/* Historical Data */}
-        {/* <section>
-          <h2>Historical Data</h2>
-          {historicalData.length > 0 && (
-            <div className="card-container">
-              {historicalData.map((data, index) => (
-                <div key={index} className="card">
-                  <h3>Date: {data.date}</h3>
-                  <p>Price: ${data.price}</p>
-                  <p>Volume: {data.volume}</p>
-                </div>
-              ))}
-            </div>
-          )}
-        </section> */}
 
         {/* Market News */}
         <section>

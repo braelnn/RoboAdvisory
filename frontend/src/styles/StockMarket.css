@@ -1,0 +1,208 @@
+/* General Page Styling */
+.page {
+  font-family: 'Roboto', Arial, sans-serif;
+  background-color: #F3F6F8;
+  color: #434649;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Stock Card - Increased Size */
+.stock-card {
+  background-color: #FFFFFF;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  border: 1px solid #E1E9EE;
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+}
+.stock-card .icon{
+  font-size: 32px;
+}
+  
+
+/* Stock Search Container */
+.search-container {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.search-container input {
+  padding: 14px;
+  border: 1px solid #86888A;
+  border-radius: 8px;
+  font-size: 18px;
+  width: 70%;
+}
+
+.search-container button {
+  background-color: #0077B5;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+}
+
+.search-container button:hover {
+  background-color: #005587;
+  transform: scale(1.05);
+}
+
+/* Error Message */
+.error {
+  color: #D9534F;
+  font-size: 16px;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.error-icon {
+  font-size: 20px;
+}
+
+/* Stock Information */
+.stock-info {
+  background: #F3F6F8;
+  padding: 30px;
+  border-radius: 10px;
+  margin-top: 25px;
+}
+
+.stock-info h3 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #0077B5;
+  margin-bottom: 12px;
+}
+
+.stock-info p {
+  font-size: 18px;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Icons - Increased Size */
+.icon {
+  font-size: 24px;
+  color: #0077B5;
+}
+
+/* Responsive Design */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .stock-card {
+    max-width: 90%;
+    padding: 35px;
+  }
+
+  .search-container input {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .search-container button {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .stock-info {
+    padding: 25px;
+  }
+
+  .stock-info h3 {
+    font-size: 24px;
+  }
+
+  .stock-info p {
+    font-size: 16px;
+  }
+
+  .icon {
+    font-size: 30px;
+  }
+}
+
+/* Mobile Screens */
+@media (max-width: 768px) {
+  .stock-card {
+    max-width: 95%;
+    padding: 30px;
+  }
+
+  .search-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .search-container input {
+    width: 100%;
+  }
+
+  .search-container button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .stock-info {
+    padding: 20px;
+  }
+
+  .stock-info h3 {
+    font-size: 22px;
+  }
+
+  .stock-info p {
+    font-size: 15px;
+  }
+
+  .icon {
+    font-size: 20px;
+  }
+}
+
+/* Small Mobile Screens */
+@media (max-width: 480px) {
+  .stock-card {
+    padding: 20px;
+  }
+
+  .search-container input {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .search-container button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .stock-info h3 {
+    font-size: 20px;
+  }
+
+  .stock-info p {
+    font-size: 14px;
+  }
+
+  .icon {
+    font-size: 18px;
+  }
+}

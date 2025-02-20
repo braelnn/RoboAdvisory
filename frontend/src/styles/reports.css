@@ -1,0 +1,79 @@
+/* ---- Reports Section Styling ---- */
+.reports-section { 
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+/* ---- Header ---- */
+.reports-section h2 {
+    color: #0077B5;
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* ---- Report Actions (Buttons) ---- */
+.report-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.download-btn,
+.add-report-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #0077B5;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.download-btn:hover,
+.add-report-btn:hover {
+    background: #005587;
+}
+
+.download-btn svg {
+    color: white;
+}
+
+/* ---- Reports List ---- */
+.report-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* ---- Dark Mode Support ---- */
+.dark-mode .reports-section {
+    background: #1E1E1E;
+    color: white;
+}
+
+.dark-mode .reports-section h2 {
+    color: #F3F6F8;
+}
+
+.dark-mode .download-btn,
+.dark-mode .add-report-btn {
+    background: #F3F6F8;
+    color: #0077B5;
+}
+
+.dark-mode .download-btn:hover,
+.dark-mode .add-report-btn:hover {
+    background: #86888A;
+}
+
+

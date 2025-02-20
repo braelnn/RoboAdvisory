@@ -95,13 +95,18 @@ const Header = () => {
               </Link>
             </li> */}
             <li>
-              <Link to="/portfolio" className={location.pathname === '/portfolios' ? 'active' : ''}>
+              <Link to="/portfolio" className={location.pathname === '/portfolio' ? 'active' : ''}>
                 Portfolio
               </Link>
             </li>
             <li>
-              <Link to="/marketdata" className={location.pathname === '/features' ? 'active' : ''}>
+              <Link to="/marketdata" className={location.pathname === '/marketdata' ? 'active' : ''}>
                 Market Data
+              </Link>
+            </li>
+            <li>
+              <Link to="/services" className={location.pathname === '/services' ? 'active' : ''}>
+                Services
               </Link>
             </li>
             <li>
@@ -110,8 +115,8 @@ const Header = () => {
               </Link>
             </li> 
             <li>
-              <Link to="/reports" className={location.pathname === '/reports' ? 'active' : ''}>
-                Reports
+              <Link to="/repo&notif" className={location.pathname === '/repo&notif' ? 'active' : ''}>
+                Reports & Notifications
               </Link>
             </li>
             <li>
@@ -136,8 +141,8 @@ const Header = () => {
 
         {!user ? (
           <>
-            <Link to="/login" className="login">Login</Link>
-            <Link to="/register" className="signin">Register</Link>
+            {/* <Link to="/login" className="login">Login</Link>
+            <Link to="/register" className="signin">Register</Link> */}
           </>
         ) : (
           <div className="user-profile">

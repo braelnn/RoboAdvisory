@@ -1,0 +1,123 @@
+/* Import Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Root Variables for Theme Colors */
+:root {
+  --primary-color: #0077B5; /* LinkedIn Blue */
+  --secondary-color: #434649; /* Slate Gray */
+  --accent-color: #979a9c; /* Cool Gray */
+  --neutral-white: #ffffff;
+  --neutral-light-gray: #F3F6F8;
+  --hover-dark-blue: #005587; /* Slightly darker blue for hover */
+}
+
+/* Apply Global Font Family */
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Footer Styling */
+.footer {
+  background-color: var(--secondary-color); /* Slate Gray */
+  color: var(--neutral-white); /* White text */
+  padding: 40px 0;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+/* Container */
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* Footer Sections */
+.footer-section {
+  flex: 1;
+  min-width: 220px;
+  margin-bottom: 20px;
+}
+
+.footer-section h3 {
+  font-family: 'Roboto', sans-serif;
+  color: var(--neutral-white);
+  font-size: 33px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.footer-section p,
+.footer-section ul {
+  font-family: Arial, sans-serif;
+  color: var(--accent-color); /* Cool Gray */
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+   
+
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+  font-weight: 400;
+  color: #00a6ff;
+
+}
+
+.footer-section ul li a:hover {
+  color: var(--primary-color); /* LinkedIn Blue */
+}
+
+/* Contact Info */
+.footer-section p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* Social Media Icons */
+.footer-social {
+  margin-top: 20px;
+}
+
+.footer-social .social-icon {
+  color: var(--neutral-white);
+  font-size: 20px;
+  margin: 0 10px;
+  display: inline-block;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer-social .social-icon:hover {
+  color: var(--hover-dark-blue);
+}
+
+/* Bottom Copyright */
+.footer-bottom {
+  margin-top: 20px;
+  font-size: 13px;
+  color: var(--accent-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}

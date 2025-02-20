@@ -1,0 +1,90 @@
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    background-color: #F3F6F8; /* Light Gray Background */
+    margin-left: 0 auto;
+  }
+  
+  /* Card Container - Centered and Spacious */
+  .cards-container {
+    display: flex;
+    gap: 40px; /* Increased gap for better spacing */
+    justify-content: center;
+    flex-wrap: wrap; /* Ensures responsiveness on smaller screens */
+    margin-bottom: 30px;
+    margin-left: 0;
+  }
+  
+  /* Bigger Cards */
+  .card {
+    background-color: #FFFFFF; /* White background */
+    padding: 40px; /* Increased padding for a bigger card */
+    border-radius: 16px; /* More rounded corners for a modern look */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 400px; /* Increased width */
+    height: 300px; /* Increased height */
+    transition: transform 0.3s ease-in-out;
+    border: 1px solid #E1E9EE; /* Light gray border */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centers content vertically */
+  }
+  
+  /* Hover Effect */
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Bigger & Centered Icons */
+  .icon {
+    font-size: 80px; /* Increased icon size */
+    color: #0077B5; /* LinkedIn Blue */
+    margin-bottom: 15px;
+  }
+  
+  /* Larger Heading */
+  h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    color: #0077B5; /* Slate Gray */
+    margin-bottom: 10px;
+  }
+  
+  /* Improved Paragraph Styling */
+  p {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    color: #000000; /* Cool Gray */
+    line-height: 1.6;
+    max-width: 80%; /* Prevents text from stretching too much */
+  }
+  
+  /* Center Links Below Cards */
+.links-container {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  /* Style for the Page Links */
+  .page-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0077B5; /* LinkedIn Blue */
+    color: white;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background 0.3s ease-in-out;
+    margin: 10px;
+  }
+  
+  .page-link:hover {
+    background-color: #005587; /* Slightly darker blue */
+  }
+  

@@ -1,0 +1,42 @@
+.reporting-notifications-page {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #F3F6F8; /* Light Gray from theme */
+    color: #434649; /* Slate Gray for text */
+    padding: 20px;
+}
+
+.top-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0077B5; /* LinkedIn Blue */
+    color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+}
+
+.top-section h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.portfolio-selector {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #E1E9EE; /* Light gray for border */
+    border-radius: 6px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}

@@ -2,6 +2,9 @@ import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import './Home.css'
+import Footer from '../components/Footer';
+import { FaRobot, FaChartLine, FaMoneyCheckAlt, FaShieldAlt, FaUserTie,
+          FaLightbulb, FaRocket, FaGlobe, FaBook, FaUserCheck, FaUsers } from 'react-icons/fa';
 
 function Home() {
   
@@ -60,80 +63,149 @@ function Home() {
           </div>
         </div>
       </div>
-    </section>    
+    </section>
+
     <section id="why-us" className="why-us section">
+      <div className="container">
+        <h2>Why Choose <span className="highlight">RoboAdvisor</span> for Your Portfolio?</h2>
+        <p className="section-description">
+          RoboAdvisor offers cutting-edge automated investment solutions, 
+          ensuring data-driven, secure, and intelligent portfolio management tailored to your goals.
+        </p>
+        
+        {/* Features Grid */}
+        <div className="features-grid">
+          
+          {/* AI-Powered Investing */}
+          <div className="feature-card">
+            <FaRobot className="feature-icon" />
+            <h3>AI-Powered Investing</h3>
+            <p>Leverage advanced AI algorithms to optimize asset allocation and enhance returns.</p>
+          </div>
+
+          {/* Real-Time Market Insights */}
+          <div className="feature-card">
+            <FaChartLine className="feature-icon" />
+            <h3>Real-Time Market Insights</h3>
+            <p>Stay ahead with live market data and predictive analytics.</p>
+          </div>
+
+          {/* Smart Portfolio Management */}
+          <div className="feature-card">
+            <FaMoneyCheckAlt className="feature-icon" />
+            <h3>Smart Portfolio Management</h3>
+            <p>Automated, personalized strategies based on your financial goals and risk tolerance.</p>
+          </div>
+
+          {/* Secure & Transparent */}
+          <div className="feature-card">
+            <FaShieldAlt className="feature-icon" />
+            <h3>Secure & Transparent</h3>
+            <p>Robust encryption and real-time tracking for a safe investment experience.</p>
+          </div>
+
+          {/* Expert Support */}
+          <div className="feature-card">
+            <FaUserTie className="feature-icon" />
+            <h3>Expert Financial Guidance</h3>
+            <p>Access professional investment advice and support when needed.</p>
+          </div>
+          
+        </div>
+
+        {/* CTA Button */}
+        <div className="cta-container">
+          <Link to="/portfolio" className="cta-btn">Learn More</Link>
+        </div>
+      </div>
+    </section>  
+
+    {/* Learn & Grow Section */}
+      <section id="learn-grow" className="learn-grow section">
         <div className="container">
-          <div className="red-card">
-            <h3>Why Choose RoboAdvisor for Your Portfolio?</h3>
+          <h2><FaBook className="section-icon" /> Learn & Grow</h2>
+          <p>Gain expert knowledge with our investment resources.</p>
+          <div className="resources-grid">
+            <div className="resource-card"><FaUserCheck className="resource-icon" /><h4>Investment Basics</h4><p>Learn the fundamentals of smart investing.</p></div>
+            <div className="resource-card"><FaChartLine className="resource-icon" /><h4>Advanced Strategies</h4><p>Optimize your portfolio with proven methods.</p></div>
+            <div className="resource-card"><FaRocket className="resource-icon" /><h4>Future Trends</h4><p>Stay ahead with expert predictions.</p></div>
+          </div>
+        </div>
+      </section>  
+  
+
+    <section id="success-stories" className="success-stories section">
+      <div className="container">
+        <h3 className="section-title">📈 Success Stories: Real People, Real Growth</h3>
+        <p className="section-subtext">
+          See how our AI-powered RoboAdvisor has transformed the financial lives of thousands.
+        </p>
+
+        <div className="story-grid">
+          <div className="story-card">
+            <FaChartLine className="icon" />
+            <h4>Strategic Growth</h4>
             <p>
-              Our portfolio management tools provide you with automated, efficient, 
-              and personalized investment strategies. Whether you're starting your financial journey 
-              or managing an established portfolio, RoboAdvisor simplifies the process and maximizes your returns.
+              “I used to struggle with investment decisions, but RoboAdvisor made everything simple! 
+              My portfolio has grown by <strong>30% in just one year</strong>!”
             </p>
-            <Link to="/portfolio" className="cta-btn">Learn More</Link>
+            <span>- Sarah L., Tech Entrepreneur</span>
           </div>
+
+          <div className="story-card">
+            <FaLightbulb className="icon" />
+            <h4>Smart Insights</h4>
+            <p>
+              “The AI-powered insights helped me make <strong>smarter financial choices</strong>. 
+              I now have a diversified portfolio and peace of mind.”
+            </p>
+            <span>- Ogolla K., Financial Analyst</span>
+          </div>
+
+          <div className="story-card">
+            <FaRocket className="icon" />
+            <h4>Financial Freedom</h4>
+            <p>
+              “RoboAdvisor takes the guesswork out of investing. My savings are now <strong>working for me</strong>, 
+              and I couldn’t be happier!”
+            </p>
+            <span>- James C., Small Business Owner</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+      
+
+      
+       {/* New Sections */}
+      {/* Global Reach Section */}
+      <section id="global-reach" className="global-reach section">
+        <div className="container">
+          <h2><FaGlobe className="section-icon" /> Expanding Globally</h2>
+          <p>RoboAdvisor serves investors worldwide, ensuring cross-border investment opportunities.</p>
+          <ul>
+            <li>Available in 20+ countries</li>
+            <li>Multi-currency investment options</li>
+            <li>Localized financial strategies</li>
+          </ul>
         </div>
       </section>
+  
 
-      {/* ✅ Success Stories Section - Red Cards */}
-      <section id="success-stories" className="success-stories section">
-        <div className="container">
-          <h3 className="section-title">Success Stories: Real People, Real Growth</h3>
-          <p className="section-subtext">
-            Join thousands of users who have transformed their financial future with RoboAdvisor.
-          </p>
-          <div className="card-grid">
-            <div className="red-card">
-              <p>“I used to struggle with investment decisions, but RoboAdvisor made everything so simple!  
-              My portfolio has grown by 30% in just one year!”</p>
-              <span>- Sarah L., Tech Entrepreneur</span>
-            </div>
-            <div className="red-card">
-              <p>“The AI-powered insights helped me make smarter financial choices. I now have a  
-              diversified portfolio and peace of mind.”</p>
-              <span>- Ogolla K.,  Financial Analyst</span>
-            </div>
-            <div className="red-card">
-              <p>“RoboAdvisor takes the guesswork out of investing. My savings are now working for me,  
-              and I couldn’t be happier!”</p>
-              <span>- James C., Small Business Owner</span>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* ✅ How It Works Section - Red Cards
-      <section id="how-it-works" className="how-it-works section">
-        <div className="container">
-          <h3 className="section-title">How It Works</h3>
-          <p className="section-subtext">Getting started is easy. Follow these simple steps:</p>
-          <div className="card-grid">
-            <div className="red-card">
-              <h4>Step 1: Sign Up</h4>
-              <p>Create an account in minutes and set up your financial goals.</p>
-            </div>
-            <div className="red-card">
-              <h4>Step 2: Personalized Plan</h4>
-              <p>Answer a few questions, and let our AI tailor an investment strategy for you.</p>
-            </div>
-            <div className="red-card">
-              <h4>Step 3: Start Investing</h4>
-              <p>Deposit funds, and RoboAdvisor will handle the rest—monitoring, rebalancing, and optimizing.</p>
-            </div>
-          </div>
+    <section id="join-us3" className="join-us section">
+      <div className="container">
+        <div className="red-card cta-card3">
+          <FaUsers className="cta-icon3" /> {/* Add Icon Here */}
+          <h3>Start Your Journey Today</h3>
+          <p>Join thousands of smart investors who trust RoboAdvisor to grow their wealth.</p>
+          <Link to="/" className="cta-btn3">Join Now</Link>
         </div>
-      </section> */}
+      </div>
+    </section>
 
-      {/* ✅ Join Us Section - Red CTA Card */}
-      <section id="join-us" className="join-us section">
-        <div className="container">
-          <div className="red-card cta-card">
-            <h3>Start Your Journey Today</h3>
-            <p>Join thousands of smart investors who trust RoboAdvisor to grow their wealth.</p>
-            <Link to="/" className="cta-btn">Join Now</Link>
-          </div>
-        </div>
-      </section>
+      <Footer />
     </div>
   );
 }

@@ -1,0 +1,9 @@
+body.dark-mode {
+    background: #121212;
+    color: white;
+}
+
+.dark-mode .reports-section,
+.dark-mode .notifications-section {
+    background: #1E1E1E;
+}

@@ -1,106 +1,137 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Theme Colors */
+:root {
+  --primary-color: #0077B5; /* LinkedIn Blue */
+  --secondary-color: #434649; /* Slate Gray */
+  --accent-color: #86888A; /* Cool Gray */
+  --neutral-white: #FFFFFF;
+  --neutral-light-gray: #F3F6F8;
+  --hover-dark-blue: #005587;
+  --border-gray: #E1E9EE;
+}
+
 /* General Styles */
 .contacts {
-    font-family: Arial, sans-serif;
-    color: #333;
-    line-height: 1.6;
-  }
-  
-  .hero-section {
-    text-align: center;
-    padding: 50px 20px;
-    background: #0077b6;
-    color: white;
-  }
-  
-  .hero-section h1 {
-    font-size: 2.5rem;
-    color: #ffffff;
-    font-weight: 900;
-    font-family: Roboto;
-    font-size: 40px;
-  }
-  
-  .hero-section p {
-    font-size: 1.2rem;
-    margin-top: 10px;
-  }
-  
-  /* Contact Container */
+  font-family: Arial, sans-serif;
+  color: var(--secondary-color);
+  line-height: 1.6;
+  background-color: var(--neutral-light-gray);
+  padding: 40px 20px;
+}
+
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  padding: 50px 20px;
+  background: var(--primary-color);
+  color: var(--neutral-white);
+  border-radius: 8px;
+}
+
+.hero-section h1 {
+  font-size: 40px;
+  font-weight: 900;
+  font-family: 'Roboto', Arial, sans-serif;
+  color: #FFFFFF;
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* Contact Container */
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Contact Form & Details */
+.contact-form,
+.contact-details {
+  flex: 1;
+  min-width: 300px;
+  padding: 20px;
+  background: var(--neutral-white);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-gray);
+}
+
+.contact-form h2,
+.contact-details h2 {
+  margin-bottom: 20px;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+/* Form Styles */
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea,
+.contact-form button {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid var(--border-gray);
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: 'Arial', sans-serif;
+  color: var(--secondary-color);
+}
+
+.contact-form textarea {
+  resize: none;
+  height: 100px;
+}
+
+/* Buttons */
+.contact-form button {
+  background: var(--primary-color);
+  color: var(--neutral-white);
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: var(--hover-dark-blue);
+}
+
+/* Success Message */
+.success-message {
+  color: green;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Contact Details */
+.contact-details p {
+  margin: 10px 0;
+  color: var(--secondary-color);
+}
+
+/* Map Container */
+.map-container {
+  margin: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
   .contact-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px;
-  }
-  
-  .contact-form, .contact-details {
-    flex: 1;
-    min-width: 300px;
-    padding: 20px;
-    background: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .contact-form h2, .contact-details h2 {
-    margin-bottom: 20px;
-  }
-  
-  /* Form Styles */
-  .contact-form form {
-    display: flex;
     flex-direction: column;
   }
-  
-  .contact-form input,
-  .contact-form select,
-  .contact-form textarea,
-  .contact-form button {
-    margin-bottom: 15px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-  }
-  
-  .contact-form textarea {
-    resize: none;
-    height: 100px;
-  }
-  
-  .contact-form button {
-    background: #0077b6;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
-  }
-  
-  .contact-form button:hover {
-    background: #005f86;
-  }
-  
-  .success-message {
-    color: green;
-    font-weight: bold;
-    margin-bottom: 15px;
-  }
-  
-  /* Contact Details */
-  .contact-details p {
-    margin: 10px 0;
-  }
-  
-  /* Map Container */
-  .map-container {
-    margin: 20px;
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  
-  @media (max-width: 768px) {
-    .contact-container {
-      flex-direction: column;
-    }
-  }
-  
+}

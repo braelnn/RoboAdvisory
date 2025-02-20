@@ -1,0 +1,44 @@
+.preferences-panel {
+    background: #F3F6F8;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    width: 50%;
+    max-width: 400px;
+}
+
+.preferences-panel h3 {
+    color: #0077B5;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.preference-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+}
+
+.preference-item label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #434649;
+}
+
+.preference-item select {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #86888A;
+}
+
+.preference-item input {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+/* Dark mode styling */
+.dark-mode .preferences-panel {
+    background: #1E1E1E;
+    color: white;
+}
