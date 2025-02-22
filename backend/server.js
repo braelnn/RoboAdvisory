@@ -3,9 +3,20 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-const http = require("http"); // ✅ Import http
-const WebSocket = require("ws"); // ✅ Import WebSocket
+const http = require("http");
+const WebSocket = require("ws");
+const axios = require("axios");
 const connectDB = require("./config/db");
+const Notification = require("./models/Notification");
+
+// ✅ Import the notification utility
+const { broadcastNotification } = require("./utils/notificationUtils");
+
+// ✅ Finnhub API details
+const API_KEY = "cu8oip1r01qgljare2g0cu8oip1r01qgljare2gg";
+const BASE_URL = "https://finnhub.io/api/v1";
+
+// ✅ Import Routes
 const authRoutes = require("./routes/authRoutes");
 const contactRoutes = require("./routes/contactRoutes");
 const marketDataRoutes = require("./routes/marketDataRoutes");
@@ -13,12 +24,11 @@ const profileRoutes = require("./routes/profileRoutes");
 const portfolioRoutes = require("./routes/portfolioRoutes");
 const stockRoutes = require("./routes/stockRoutes");
 
-// ✅ Initialize Express App First
+// ✅ Initialize Express App
 const app = express();
 
-// ✅ Move dotenv & DB connection to the top
+// ✅ Connect to MongoDB
 connectDB();
-console.log("Mongo URI:", process.env.MONGO_URI);
 
 // ✅ Middleware
 app.use(cors());
@@ -38,24 +48,49 @@ app.use("/api/notifications", require("./routes/notificationRoutes"));
 // ✅ Create HTTP Server Before Using WebSocket
 const server = http.createServer(app);
 
+
 // ✅ WebSocket Server Setup
-const wss = new WebSocket.Server({ server });
+global.wss = new WebSocket.Server({ server });
 
 wss.on("connection", (ws) => {
     console.log("✅ WebSocket connected");
-    ws.send(JSON.stringify({ title: "Welcome!", message: "Connected to portfolio notifications" }));
-
-    ws.on("message", (message) => {
-        const notification = JSON.parse(message);
-        wss.clients.forEach(client => {
-            if (client.readyState === WebSocket.OPEN) {
-                client.send(JSON.stringify(notification));
-            }
-        });
-    });
+    ws.send(JSON.stringify({ title: "Welcome!", message: "Connected to notifications" }));
 
     ws.on("close", () => console.log("❌ WebSocket disconnected"));
 });
+
+// ✅ Watch MongoDB for new notifications and broadcast them
+Notification.watch().on("change", async (change) => {
+    if (change.operationType === "insert") {
+        const notification = change.fullDocument;
+        broadcastNotification(notification);
+    }
+});
+
+// ✅ Fetch market trends from Finnhub API every 1 minute
+const fetchMarketTrends = async () => {
+    try {
+        const response = await axios.get(`${BASE_URL}/quote`, {
+            params: { symbol: "AAPL", token: API_KEY } // Example: Apple Stock
+        });
+
+        if (response.data && response.data.c) {
+            const notification = await Notification.create({
+                title: "Market Update",
+                message: `Apple Stock: $${response.data.c} | Change: ${response.data.d}%`,
+                type: "info",
+            });
+
+            // ✅ Broadcast market trend notification
+            broadcastNotification(notification);
+        }
+    } catch (error) {
+        console.error("❌ Error fetching market trends:", error);
+    }
+};
+
+// ✅ Schedule market updates every 1 minute
+setInterval(fetchMarketTrends, 60000);
 
 // ✅ MongoDB Connection
 mongoose

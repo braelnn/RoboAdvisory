@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* General Styling */
+.services-page {
+  font-family: 'Roboto', Arial, sans-serif;
+  background-color: #F3F6F8;
+  color: #434649;
+  padding: 40px 10%;
+  text-align: center;
+}
+
+/* Header Styling */
+.services-page header {
+  margin-bottom: 30px;
+}
+
+.services-page h1 {
+  font-size: 42px;
+  color: #0077B5;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.services-page p {
+  font-size: 18px;
+  color: #434649;
+}
+
+/* Services Container */
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Individual Service Card */
+.service-card {
+  background-color: #FFFFFF;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid #E1E9EE;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* Icons */
+.service-card .icon {
+  font-size: 50px;
+  color: #0077B5;
+  margin-bottom: 15px;
+}
+
+/* Service Titles */
+.service-card h3 {
+  font-size: 20px;
+  color: #0077B5;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Service Descriptions */
+.service-card p {
+  font-size: 16px;
+  color: #434649;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .services-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .services-container {
+    grid-template-columns: 1fr;
+  }
+
+  .services-page h1 {
+    font-size: 36px;
+  }
+
+  .services-page p {
+    font-size: 16px;
+  }
+
+  .service-card {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-page {
+    padding: 20px;
+  }
+
+  .services-page h1 {
+    font-size: 32px;
+  }
+
+  .services-container {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    padding: 20px;
+  }
+
+  .service-card .icon {
+    font-size: 45px;
+  }
+}

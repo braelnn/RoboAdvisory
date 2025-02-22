@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import ProfileServices from "../Services/profileService";
-import "./ProfilePage.css";
+import "../styles/ProfilePage.css";
 
 const ProfilePage = () => {
   const navigate = useNavigate();
@@ -92,102 +93,103 @@ const ProfilePage = () => {
   return (
     <div className="profile">
       <Header />
-      <div className="profile-container">
-        <h2 className="profile-title">User Profile</h2>
-        <div className="profile-card">
-          <div className="profile-info">
-            <label>Full Name:</label>
-            <p>{profile.fullname}</p> {/* ✅ Fullname is autofilled and CANNOT be edited */}
-          </div>
+        <div className="profile-container">
+          <h2 className="profile-title">User Profile</h2>
+          <div className="profile-card">
+            <div className="profile-info">
+              <label>Full Name:</label>
+              <p>{profile.fullname}</p> {/* ✅ Fullname is autofilled and CANNOT be edited */}
+            </div>
 
-          <div className="profile-info">
-            <label>Email:</label>
-            <p>{profile.email}</p>
-          </div>
+            <div className="profile-info">
+              <label>Email:</label>
+              <p>{profile.email}</p>
+            </div>
 
-          <div className="profile-info">
-            <label>Financial Goals:</label>
-            {isEditing ? (
-              <select name="financialGoals" value={updatedProfile.financialGoals} onChange={handleChange}>
-                <option value="">Select a Financial Goal</option>
-                {["Retirement Savings", "Buying a House", "Starting a Business", "Children's Education", "Emergency Fund"]
-                  .map((goal, index) => (
-                    <option key={index} value={goal}>{goal}</option>
+            <div className="profile-info">
+              <label>Financial Goals:</label>
+              {isEditing ? (
+                <select name="financialGoals" value={updatedProfile.financialGoals} onChange={handleChange}>
+                  <option value="">Select a Financial Goal</option>
+                  {["Retirement Savings", "Buying a House", "Starting a Business", "Children's Education", "Emergency Fund"]
+                    .map((goal, index) => (
+                      <option key={index} value={goal}>{goal}</option>
+                    ))}
+                </select>
+              ) : (
+                <p>{profile.financialGoals}</p>
+              )}
+            </div>
+
+            <div className="profile-info">
+              <label>Risk Tolerance:</label>
+              {isEditing ? (
+                <select name="riskTolerance" value={updatedProfile.riskTolerance} onChange={handleChange}>
+                  <option value="">Select Risk Tolerance</option>
+                  {["Very Low", "Low", "Moderate", "High", "Very High", "Ultra High", "Elite Investor"].map((level, index) => (
+                    <option key={index} value={level}>{level}</option>
                   ))}
-              </select>
-            ) : (
-              <p>{profile.financialGoals}</p>
-            )}
-          </div>
+                </select>
+              ) : (
+                <p>{profile.riskTolerance}</p>
+              )}
+            </div>
 
-          <div className="profile-info">
-            <label>Risk Tolerance:</label>
-            {isEditing ? (
-              <select name="riskTolerance" value={updatedProfile.riskTolerance} onChange={handleChange}>
-                <option value="">Select Risk Tolerance</option>
-                {["Very Low", "Low", "Moderate", "High", "Very High", "Ultra High", "Elite Investor"].map((level, index) => (
-                  <option key={index} value={level}>{level}</option>
-                ))}
-              </select>
-            ) : (
-              <p>{profile.riskTolerance}</p>
-            )}
-          </div>
-
-          <div className="profile-actions">
-            {isEditing ? (
-              <>
-                <button className="save-btn" onClick={handleSave}>
-                  Save
+            <div className="profile-actions">
+              {isEditing ? (
+                <>
+                  <button className="save-btn" onClick={handleSave}>
+                    Save
+                  </button>
+                  <button className="cancel-btn" onClick={handleCancelEdit}>
+                    Cancel
+                  </button>
+                </>
+              ) : (
+                <button className="edit-btn" onClick={handleEditClick}>
+                  Edit
                 </button>
-                <button className="cancel-btn" onClick={handleCancelEdit}>
-                  Cancel
-                </button>
-              </>
-            ) : (
-              <button className="edit-btn" onClick={handleEditClick}>
-                Edit
+              )}
+              <button className="change-password-btn" onClick={handleChangePassword}>
+                Change Password
               </button>
-            )}
-            <button className="change-password-btn" onClick={handleChangePassword}>
-              Change Password
-            </button>
+            </div>
           </div>
-        </div>
 
-        {isChangingPassword && (
-          <div className="password-change-container">
-            <h3>Change Password</h3>
-            {error && <p className="error-message">{error}</p>}
-            {message && <p className="success-message">{message}</p>}
-            <input
-              type="password"
-              name="currentPassword"
-              placeholder="Current Password"
-              onChange={handlePasswordChange}
-            />
-            <input
-              type="password"
-              name="newPassword"
-              placeholder="New Password"
-              onChange={handlePasswordChange}
-            />
-            <input
-              type="password"
-              name="confirmNewPassword"
-              placeholder="Confirm New Password"
-              onChange={handlePasswordChange}
-            />
-            <button className="save-btn" onClick={handleSubmitPasswordChange}>
-              Save Password
-            </button>
-            <button className="cancel-btn" onClick={handleCancelChangePassword}>
-              Cancel
-            </button>
-          </div>
-        )}
-      </div>
-      </div>
+          {isChangingPassword && (
+            <div className="password-change-container">
+              <h3>Change Password</h3>
+              {error && <p className="error-message">{error}</p>}
+              {message && <p className="success-message">{message}</p>}
+              <input
+                type="password"
+                name="currentPassword"
+                placeholder="Current Password"
+                onChange={handlePasswordChange}
+              />
+              <input
+                type="password"
+                name="newPassword"
+                placeholder="New Password"
+                onChange={handlePasswordChange}
+              />
+              <input
+                type="password"
+                name="confirmNewPassword"
+                placeholder="Confirm New Password"
+                onChange={handlePasswordChange}
+              />
+              <button className="save-btn" onClick={handleSubmitPasswordChange}>
+                Save Password
+              </button>
+              <button className="cancel-btn" onClick={handleCancelChangePassword}>
+                Cancel
+              </button>
+            </div>
+          )}
+        </div>
+      <Footer />      
+    </div>
   );
 };
 

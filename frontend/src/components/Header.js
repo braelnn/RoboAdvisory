@@ -89,6 +89,17 @@ const Header = () => {
                 Home
               </Link>
             </li>
+            <li>
+              <Link to="/services" className={location.pathname === '/services' ? 'active' : ''}>
+                Services
+              </Link>
+            </li>
+            <li>
+              <Link to="/marketdata" className={location.pathname === '/marketdata' ? 'active' : ''}>
+                Market Data
+              </Link>
+            </li>
+
             {/* <li>
               <Link to="/dashboard" className={location.pathname === '/dashboard' ? 'active' : ''}>
                 Dashboard
@@ -99,16 +110,8 @@ const Header = () => {
                 Portfolio
               </Link>
             </li>
-            <li>
-              <Link to="/marketdata" className={location.pathname === '/marketdata' ? 'active' : ''}>
-                Market Data
-              </Link>
-            </li>
-            <li>
-              <Link to="/services" className={location.pathname === '/services' ? 'active' : ''}>
-                Services
-              </Link>
-            </li>
+            
+           
             <li>
               <Link to="/edit-profile" className={location.pathname === '/edit-profile' ? 'active' : ''}>
                 Profile

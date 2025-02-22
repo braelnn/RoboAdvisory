@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import './Contacts.css';
+import '../styles/Contacts.css';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 import { sendContactMessage } from '../Services/contactsService';
 
 const Contacts = () => {
@@ -117,6 +118,7 @@ const Contacts = () => {
           ></iframe>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

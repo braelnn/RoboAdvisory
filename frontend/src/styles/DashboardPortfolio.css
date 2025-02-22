@@ -88,3 +88,104 @@
     background-color: #005587; /* Slightly darker blue */
   }
   
+  /* Responsive Design for Dashboard */
+@media (max-width: 1024px) {
+  .dashboard-container {
+    padding: 30px;
+  }
+
+  .cards-container {
+    gap: 30px;
+  }
+
+  .card {
+    width: 350px;
+    height: 280px;
+    padding: 30px;
+  }
+
+  .icon {
+    font-size: 70px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  p {
+    font-size: 15px;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 20px;
+  }
+
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .card {
+    width: 90%;
+    height: auto;
+    padding: 25px;
+  }
+
+  .icon {
+    font-size: 60px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .links-container {
+    margin-top: 15px;
+  }
+
+  .page-link {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-container {
+    padding: 15px;
+  }
+
+  .cards-container {
+    gap: 15px;
+  }
+
+  .card {
+    width: 100%;
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .icon {
+    font-size: 50px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  p {
+    font-size: 13px;
+  }
+
+  .page-link {
+    font-size: 13px;
+    padding: 7px 14px;
+  }
+}

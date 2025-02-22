@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
-import './Home.css'
+import '../styles/Home.css'
 import Footer from '../components/Footer';
 import { FaRobot, FaChartLine, FaMoneyCheckAlt, FaShieldAlt, FaUserTie,
           FaLightbulb, FaRocket, FaGlobe, FaBook, FaUserCheck, FaUsers } from 'react-icons/fa';

@@ -48,3 +48,90 @@
 .view-btn:hover {
     background-color: #005587; /* Darker LinkedIn Blue */
 }
+
+
+/* Responsive Design for Report Card */
+@media (max-width: 1024px) {
+    .report-card {
+      padding: 12px;
+      border-radius: 6px;
+    }
+  
+    .report-title {
+      font-size: 1rem;
+    }
+  
+    .report-date,
+    .report-value,
+    .report-risk {
+      font-size: 0.85rem;
+    }
+  
+    .report-summary {
+      font-size: 0.95rem;
+    }
+  
+    .view-btn {
+      font-size: 14px;
+      padding: 7px 10px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .report-card {
+      padding: 10px;
+    }
+  
+    .report-title {
+      font-size: 0.95rem;
+    }
+  
+    .report-date,
+    .report-value,
+    .report-risk {
+      font-size: 0.8rem;
+    }
+  
+    .report-summary {
+      font-size: 0.9rem;
+    }
+  
+    .view-btn {
+      font-size: 13px;
+      padding: 6px 10px;
+      width: 100%;
+      justify-content: center;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .report-card {
+      padding: 8px;
+      border-radius: 5px;
+    }
+  
+    .report-title {
+      font-size: 0.9rem;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .report-date,
+    .report-value,
+    .report-risk {
+      font-size: 0.75rem;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .report-summary {
+      font-size: 0.85rem;
+    }
+  
+    .view-btn {
+      font-size: 12px;
+      padding: 5px 8px;
+      width: 100%;
+    }
+  }
+  

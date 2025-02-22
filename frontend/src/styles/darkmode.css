@@ -7,3 +7,37 @@ body.dark-mode {
 .dark-mode .notifications-section {
     background: #1E1E1E;
 }
+
+/* Responsive Design for Dark Mode */
+@media (max-width: 1024px) {
+    .dark-mode .reports-section,
+    .dark-mode .notifications-section {
+      padding: 15px;
+      border-radius: 6px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .dark-mode .reports-section,
+    .dark-mode .notifications-section {
+      padding: 10px;
+    }
+  
+    body.dark-mode {
+      font-size: 0.95rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    body.dark-mode {
+      background: #0D0D0D;
+      font-size: 0.9rem;
+    }
+  
+    .dark-mode .reports-section,
+    .dark-mode .notifications-section {
+      padding: 8px;
+      border-radius: 4px;
+    }
+  }
+  

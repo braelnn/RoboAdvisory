@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 import "../styles/StockMarket.css";
 import { FaSearch, FaChartLine, FaArrowUp, FaArrowDown, FaPlayCircle, FaStopCircle, FaExclamationCircle } from "react-icons/fa";
 
@@ -39,38 +41,42 @@ const StockMarket = () => {
   };
 
   return (
-    <div className="page">
-      <div className="stock-card">
-        <h2><FaChartLine className="icon" /> Real-Time Market Data</h2>
+    <div className="stockk">
+      <Header />
+      <div className="page">
+        <div className="stock-card">
+          <h2><FaChartLine className="icon" /> Real-Time Market Data</h2>
 
-        {/* Stock Search */}
-        <div className="search-container">
-          <input
-            type="text"
-            placeholder="Enter Stock Symbol (e.g., AAPL, TSLA)"
-            value={symbol}
-            onChange={(e) => setSymbol(e.target.value.toUpperCase().trim())}
-          />
-          <button onClick={handleFetchStock}>
-            <FaSearch /> Get Stock Price
-          </button>
-        </div>
-
-        {/* Error Message */}
-        {error && <p className="error"><FaExclamationCircle className="error-icon" /> {error}</p>}
-
-        {/* Display Stock Data */}
-        {stockData && (
-          <div className="stock-info">
-            <h3>{stockData.symbol}</h3>
-            <p><FaChartLine className="icon" /> <strong>Current Price:</strong> ${stockData.currentPrice || "N/A"}</p>
-            <p><FaArrowUp className="icon" /> <strong>High:</strong> ${stockData.highPrice || "N/A"}</p>
-            <p><FaArrowDown className="icon" /> <strong>Low:</strong> ${stockData.lowPrice || "N/A"}</p>
-            <p><FaPlayCircle className="icon" /> <strong>Open:</strong> ${stockData.openPrice || "N/A"}</p>
-            <p><FaStopCircle className="icon" /> <strong>Previous Close:</strong> ${stockData.previousClose || "N/A"}</p>
+          {/* Stock Search */}
+          <div className="search-container">
+            <input
+              type="text"
+              placeholder="Enter Stock Symbol (e.g., AAPL, TSLA)"
+              value={symbol}
+              onChange={(e) => setSymbol(e.target.value.toUpperCase().trim())}
+            />
+            <button onClick={handleFetchStock}>
+              <FaSearch /> Get Stock Price
+            </button>
           </div>
-        )}
+
+          {/* Error Message */}
+          {error && <p className="error"><FaExclamationCircle className="error-icon" /> {error}</p>}
+
+          {/* Display Stock Data */}
+          {stockData && (
+            <div className="stock-info">
+              <h3>{stockData.symbol}</h3>
+              <p><FaChartLine className="icon" /> <strong>Current Price:</strong> ${stockData.currentPrice || "N/A"}</p>
+              <p><FaArrowUp className="icon" /> <strong>High:</strong> ${stockData.highPrice || "N/A"}</p>
+              <p><FaArrowDown className="icon" /> <strong>Low:</strong> ${stockData.lowPrice || "N/A"}</p>
+              <p><FaPlayCircle className="icon" /> <strong>Open:</strong> ${stockData.openPrice || "N/A"}</p>
+              <p><FaStopCircle className="icon" /> <strong>Previous Close:</strong> ${stockData.previousClose || "N/A"}</p>
+            </div>
+          )}
+        </div>
       </div>
+      <Footer />
     </div>
   );
 };

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { login } from "../Services/authService"; // Import the login function
-import "./Login.css";
+import "../styles/Login.css";
 
 const Login = () => {
   const [formData, setFormData] = useState({
     username: "",
     email: "",
-    password: "",
+    password: "", 
   });
 
   const [message, setMessage] = useState("");
@@ -20,18 +20,25 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-
+  
     try {
       const response = await login(formData); // Send login request
       setMessage("");
-      setOtpSent(true); // Show OTP input field
-      setToken(response.token); // Temporarily store the token
-
-      // Save token to localStorage only after OTP verification
+      setToken(response.token);
+  
+      if (response.isAdmin) {
+        // Redirect admin to adminDashboard
+        localStorage.setItem("token", response.token);
+        window.location.href = "/adminDashboard";
+      } else {
+        setOtpSent(true); // Show OTP input field for normal users
+      }
+  
     } catch (error) {
       setMessage(error.message || "An error occurred");
     }
   };
+  
 
   const handleOtpSubmit = async (e) => {
     e.preventDefault();

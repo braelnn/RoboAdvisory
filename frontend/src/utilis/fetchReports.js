@@ -10,6 +10,23 @@ export const fetchReportsByPortfolio = async (portfolioId) => {
     }
 };
 
+export const fetchAllReports = async (portfolioId) => {
+    try {
+        // Ensure the portfolio ID is valid
+        if (!portfolioId || portfolioId.length !== 24) {
+          throw new Error("Invalid portfolio ID format.");
+        }
+    
+        const response = await api.get(`/reports/${portfolioId}`, {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+        });
+        return response.data;
+      } catch (error) {
+        console.error("Error fetching reports:", error.response?.data || error.message);
+        throw error;
+      }
+    };
+
 export const createReportForPortfolio = async (portfolioId, reportData) => {
     try {
         console.log(`📢 Sending Report Data to Backend:`, reportData); // ✅ Debugging

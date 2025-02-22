@@ -37,9 +37,9 @@ const Footer = () => {
         {/* Contact Us */}
         <div className="footer-section">
           <h3>Contact Us</h3>
-          <p><FaMapMarkerAlt /> 123 Investment St, FinTech City</p>
-          <p><FaPhone /> +1 (234) 567-890</p>
-          <p><FaEnvelope /> support@roboadvisor.com</p>
+          <p><FaMapMarkerAlt /> Brael Plaza, Nairobi City</p>
+          <p><FaPhone /> +254 (799) 714 455</p>
+          <p><FaEnvelope /> blessingbraelly@gmail.com</p>
         </div>
       </div>
 

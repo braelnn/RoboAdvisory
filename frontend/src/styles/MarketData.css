@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* General Page Styling */
+.main-content {
+  font-family: 'Roboto', Arial, sans-serif;
+  background-color: #F3F6F8;
+  color: #434649;
+  padding: 20px;
+  width: 90%;
+  margin: auto;
+}
+
+/* Headings */
+.main-content h1 {
+  color: #0077B5;
+  font-weight: 700;
+  font-size: 42px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 10px;
+}
+
+.main-content h2 {
+  color: #0077B5;
+  font-size: 32px;
+  margin-top: 20px;
+  font-weight: 650;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
+.main-content p {
+  font-size: 20px;
+  font-family: Arial, sans-serif;
+  margin-left: 30%;
+}
+
+/* Card Container - 3 Cards Per Row with Reduced Side Gap */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px; /* Reduced sideways gap */
+  margin-top: 20px;
+  margin-left: 20px;
+  justify-content: center;
+}
+
+/* Individual Cards */
+.card {
+  background-color: #FFFFFF;
+  padding: 20px; /* Increased padding */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid #E1E9EE;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  font-family: 'Roboto', sans-serif;
+  width: 100%; /* Ensure it fits grid column */
+  min-height: 500px; /* Increased height to fit content */
+  justify-content: space-between;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Image */
+.card img {
+  width: 90px; /* Slightly larger image */
+  height: 90px;
+  margin-bottom: 15px;
+  border-radius: 50%;
+}
+
+/* Card Title */
+.card h3 {
+  color: #0077B5;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Card Details */
+.card p {
+  font-size: 16px;
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: Arial, sans-serif;
+}
+
+/* Market Change */
+.positive {
+  color: green;
+  font-weight: bold;
+}
+
+.negative {
+  color: red;
+  font-weight: bold;
+}
+
+/* Read More Button */
+.card a {
+  display: inline-block;
+  margin-top: 15px;
+  background-color: #0077B5;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.card a:hover {
+  background-color: #005587;
+}
+
+/* Icons */
+.icon {
+  font-size: 22px;
+  color: #0077B5;
+  margin-right: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .card {
+    min-height: 480px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+
+  .market-data h1 {
+    font-size: 36px;
+  }
+
+  .market-data h2 {
+    font-size: 28px;
+  }
+
+  .card {
+    width: 90%;
+    min-height: 480px;
+    padding: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .market-data {
+    padding: 10px;
+  }
+
+  .market-data h1 {
+    font-size: 32px;
+  }
+
+  .market-data h2 {
+    font-size: 26px;
+  }
+
+  .card {
+    width: 100%;
+    padding: 25px;
+    min-height: 460px;
+  }
+
+  .card img {
+    width: 80px;
+    height: 80px;
+  }
+}

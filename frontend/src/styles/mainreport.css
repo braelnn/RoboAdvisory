@@ -16,16 +16,38 @@
 }
 
 .top-section h1 {
-    margin: 0;
     font-size: 1.8rem;
+    color: rgb(255, 255, 255);
+    font-weight: 800;
+    text-align: center;
+    margin-left: 35%;
 }
 
 .portfolio-selector {
     margin-top: 15px;
-    padding: 10px;
+    padding: 30px;
     background-color: white;
     border: 1px solid #E1E9EE; /* Light gray for border */
     border-radius: 6px;
+}
+
+.portfolio-selector label {
+    color: black;
+    font-size: 25px;
+    font-family: Arial, sans-serif;
+    padding: 10px;    
+}
+.portfolio-selector option {
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    
+}
+.portfolio-selector select {
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+    border-radius: 20px;
+    height: 50px;
+    
 }
 
 .grid-container {
@@ -35,8 +57,99 @@
     margin-top: 20px;
 }
 
-@media (max-width: 768px) {
-    .grid-container {
-        grid-template-columns: 1fr;
+
+/* Responsive Design for Reporting & Notifications Page */
+@media (max-width: 1024px) {
+    .top-section {
+      flex-direction: column;
+      text-align: center;
+      padding: 15px;
     }
-}
+  
+    .top-section h1 {
+      font-size: 1.6rem;
+      margin-left: 0;
+    }
+  
+    .portfolio-selector {
+      padding: 25px;
+    }
+  
+    .portfolio-selector label {
+      font-size: 22px;
+    }
+  
+    .portfolio-selector select {
+      font-size: 22px;
+      height: 45px;
+    }
+  
+    .grid-container {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .reporting-notifications-page {
+      padding: 15px;
+    }
+  
+    .top-section {
+      padding: 12px;
+    }
+  
+    .top-section h1 {
+      font-size: 1.4rem;
+    }
+  
+    .portfolio-selector {
+      padding: 20px;
+    }
+  
+    .portfolio-selector label {
+      font-size: 20px;
+    }
+  
+    .portfolio-selector select {
+      font-size: 20px;
+      height: 40px;
+    }
+  
+    .grid-container {
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .reporting-notifications-page {
+      padding: 10px;
+    }
+  
+    .top-section {
+      padding: 10px;
+      border-radius: 6px;
+    }
+  
+    .top-section h1 {
+      font-size: 1.2rem;
+    }
+  
+    .portfolio-selector {
+      padding: 15px;
+    }
+  
+    .portfolio-selector label {
+      font-size: 18px;
+    }
+  
+    .portfolio-selector select {
+      font-size: 18px;
+      height: 35px;
+    }
+  
+    .grid-container {
+      gap: 10px;
+    }
+  }
+  

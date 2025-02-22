@@ -15,3 +15,54 @@
     font-size: 12px;
     color: #86888A;
 }
+
+/* Responsive Design for Notifications Section */
+@media (max-width: 1024px) {
+    .notifications-section {
+      padding: 15px;
+      border-radius: 8px;
+    }
+  
+    .notification-card {
+      padding: 12px;
+      margin: 8px 0;
+      border-left-width: 3px;
+    }
+  
+    .timestamp {
+      font-size: 11px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .notifications-section {
+      padding: 12px;
+    }
+  
+    .notification-card {
+      padding: 10px;
+      margin: 6px 0;
+    }
+  
+    .timestamp {
+      font-size: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .notifications-section {
+      padding: 10px;
+      border-radius: 6px;
+    }
+  
+    .notification-card {
+      padding: 8px;
+      margin: 5px 0;
+      border-left-width: 2px;
+    }
+  
+    .timestamp {
+      font-size: 9px;
+    }
+  }
+  

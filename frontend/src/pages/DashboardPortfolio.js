@@ -3,14 +3,14 @@ import { Outlet, Link } from "react-router-dom";
 import { FaChartLine, FaBriefcase } from "react-icons/fa";
 import "../styles/DashboardPortfolio.css";
 import Header from "../components/Header"
+import Footer from "../components/Footer";
 
 const DashboardPortfolio = () => {
   const [selectedPage, setSelectedPage] = useState(null);
 
   return (
-    <div>
-        <Header />
-   
+    <div className="dashport">
+        <Header />   
         <div className="dashboard-container">
         <div className="cards-container">
             {/* Portfolio Management Card */}
@@ -49,6 +49,7 @@ const DashboardPortfolio = () => {
             <Outlet />
         </div>
         </div>
+        <Footer />
     </div>
   );
 };

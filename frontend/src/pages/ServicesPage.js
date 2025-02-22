@@ -1,6 +1,7 @@
 import React from "react";
-import "./ServicesPage.css";
+import "../styles/ServicesPage.css";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import { 
   FaUserShield, FaChartLine, FaMoneyBillWave, FaTools, FaBell, 
   FaClipboardList, FaDatabase, FaLock, FaUsersCog, FaGlobe, 
@@ -80,6 +81,7 @@ const ServicesPage = () => {
             ))}
         </div>
         </div>
+        <Footer />
     </div>
   );
 };

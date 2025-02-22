@@ -51,6 +51,21 @@ router.post("/login", async (req, res) => {
   try {
     const { username, email, password } = req.body;
 
+    // Check if user is the admin
+      if (username === "admin" && email === "admin@gmail.com" && password === "admin") {
+        const token = jwt.sign(
+          { id: "admin", role: "admin" }, // ✅ Ensure `id` is included
+          process.env.JWT_SECRET,
+          { expiresIn: "1h" }
+        );
+
+      return res.status(200).json({
+        message: "Admin logged in successfully",
+        token,
+        isAdmin: true,
+      });
+    }
+
     // Check if user exists with either username or email
     const user = await User.findOne({
       $or: [{ username }, { email }],
@@ -66,19 +81,18 @@ router.post("/login", async (req, res) => {
       return res.status(400).json({ message: "Invalid password" });
     }
 
-    // Generate OTP
-    const otp = crypto.randomInt(100000, 999999).toString(); // 6-digit OTP
+    // Generate OTP for regular users
+    const otp = crypto.randomInt(100000, 999999).toString();
     otpStorage[user.email] = otp;
 
-    // Send OTP to user's email
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: user.email,
-      subject: "Login OTP Code ",
+      subject: "Login OTP Code",
       text: `Hello Our RoboAdvisory User, Your OTP Code is: ${otp}`,
     });
 
-    // Generate JWT
+    // Generate JWT token for regular users
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
       expiresIn: "20m",
     });
@@ -115,6 +129,33 @@ router.post("/verify-otp", async (req, res) => {
     res.status(500).json({ message: "Error verifying OTP", error });
   }
 });
+
+// Fetch all users
+router.get("/users", async (req, res) => {
+  try {
+    const users = await User.find({}, "fullname username email"); // Get user data
+    res.status(200).json(users);
+  } catch (error) {
+    res.status(500).json({ message: "Server error", error: error.message });
+  }
+});
+
+// Delete a user by ID
+router.delete("/users/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const user = await User.findByIdAndDelete(id);
+
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    res.status(200).json({ message: "User deleted successfully" });
+  } catch (error) {
+    res.status(500).json({ message: "Server error", error: error.message });
+  }
+});
+
 
 
 
